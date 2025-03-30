@@ -43,7 +43,7 @@
         <!-- PlaceholderAPI repo -->
         <repository>
             <id>placeholderapi</id>
-            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+            <url>https://repo.extendedclip.com/releases/</url>
         </repository>
         <!-- MythicMobs -->
         <repository>
@@ -119,7 +119,7 @@
         <dependency>
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
-            <version>2.11.0</version>
+            <version>2.11.6</version>
             <scope>provided</scope>
             <exclusions>
                 <exclusion>

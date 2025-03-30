@@ -1,5 +1,7 @@
 package emanondev.itemedit;
 
+import emanondev.itemedit.otter.ItemEditItemGiveEvent;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -26,6 +28,14 @@ public class UtilsInventory {
      */
     public static int giveAmount(@NotNull HumanEntity player, @NotNull ItemStack item, final int amount,
                                  @NotNull final ExcessManage mode) {
+
+        ItemEditItemGiveEvent event = new ItemEditItemGiveEvent(player, item, amount, mode);
+        Bukkit.getPluginManager().callEvent(event);
+
+        if(event.isCancelled()) {
+            return amount;
+        }
+
         if (amount < 0)
             throw new IllegalArgumentException("negative amount");
         item = item.clone();
